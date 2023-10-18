@@ -22,7 +22,6 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 /// # Safety
 ///
@@ -32,7 +31,8 @@ unsafe fn modify_by_address(address: usize) {
     // code's behavior and the contract of this function. You may use the
     // comment of the test below as your format reference.
     unsafe {
-        todo!("Your code goes here")
+        let addr:u32 = 0xAABBCCDD;
+        core::ptr::copy_nonoverlapping(core::ptr::addr_of!(addr) as *const u8, address as *const u8 as *mut u8, 4);
     }
 }
 
